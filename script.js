@@ -1,6 +1,6 @@
 // --- Configurações do ThingSpeak ---
-const CHANNEL_ID = 'SEU_CHANNEL_ID_AQUI'; // <-- Substitua pelo ID do seu canal ThingSpeak
-const READ_API_KEY = 'SUA_READ_API_KEY_AQUI'; // <-- Substitua pela sua Read API Key do ThingSpeak
+const CHANNEL_ID = '3001123'; // <-- Substitua pelo ID do seu canal ThingSpeak
+const READ_API_KEY = '2H5RLCSU6KO803X7'; // <-- Substitua pela sua Read API Key do ThingSpeak
 
 // IDs dos campos no ThingSpeak (conforme configurado no código do ESP32)
 const FIELD_TEMPERATURA = 1; // field1
