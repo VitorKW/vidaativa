@@ -7,8 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Monitoramento da Piscina</h1>
+    <div id="loginSection" class="auth-container"> <h1>Login no Monitoramento da Piscina</h1>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+            <p id="loginMessage" class="error-message"></p>
+        </form>
+    </div>
+
+    <div id="appSection" class="app-container hidden"> <h1>Monitoramento da Piscina</h1>
         <div class="data-display">
             <p>Temperatura da Água: <span id="temperatura">-</span> °C</p>
             <p>Corrente do Motor: <span id="corrente">-</span> A</p>
@@ -19,6 +33,7 @@
             Última atualização: <span id="lastUpdated">--:--:--</span>
         </div>
         <div id="errorMessage" class="error-message"></div>
+        <button id="logoutButton">Sair</button>
     </div>
 
     <script src="script.js"></script>

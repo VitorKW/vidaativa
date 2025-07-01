@@ -1,65 +1,132 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: #e9ecef; /* Um cinza mais claro para o fundo */
+    color: #343a40; /* Texto mais escuro para contraste */
 }
 
-.container {
+/* Estilo base para os contêineres de cada tela */
+.auth-container, .app-container {
     background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px; /* Mais padding para espaçamento interno */
+    border-radius: 12px; /* Cantos mais arredondados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra mais suave e proeminente */
     text-align: center;
     width: 90%;
-    max-width: 400px;
+    max-width: 420px; /* Largura um pouco maior */
+    transition: opacity 0.5s ease-in-out; /* Transição para ocultar/mostrar */
 }
 
+/* Títulos */
 h1 {
     color: #007bff;
-    margin-bottom: 25px;
-    font-size: 1.8em;
+    margin-bottom: 30px; /* Mais espaço abaixo do título */
+    font-size: 2em; /* Título maior */
+    font-weight: 600; /* Levemente mais bold */
 }
 
+/* Displays de Dados */
 .data-display p {
-    font-size: 1.1em;
-    margin: 15px 0;
+    font-size: 1.2em; /* Texto dos dados maior */
+    margin: 18px 0; /* Mais espaçamento entre as linhas */
     font-weight: bold;
 }
 
 .data-display span {
-    color: #0056b3;
+    color: #0056b3; /* Azul mais escuro */
+    font-weight: 700;
 }
 
-#refreshButton {
-    background-color: #28a745;
+/* Botões */
+button {
+    background-color: #28a745; /* Verde padrão para botões de ação */
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 6px; /* Bordas mais suaves */
     cursor: pointer;
-    font-size: 1em;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+    font-size: 1.05em;
+    font-weight: 500;
+    margin-top: 25px; /* Espaçamento padrão acima dos botões */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito hover */
+}
+
+button:hover {
+    background-color: #218838;
+    transform: translateY(-2px); /* Efeito de "subir" no hover */
+}
+
+/* Estilo específico para o botão de atualização */
+#refreshButton {
+    background-color: #17a2b8; /* Azul claro para atualizar */
 }
 
 #refreshButton:hover {
-    background-color: #218838;
+    background-color: #138496;
 }
 
+/* Estilo específico para o botão de logout */
+#logoutButton {
+    background-color: #dc3545; /* Vermelho para sair */
+    margin-top: 40px; /* Mais espaçamento do botão de logout */
+}
+
+#logoutButton:hover {
+    background-color: #c82333;
+}
+
+/* Última Atualização */
 .last-updated {
-    margin-top: 25px;
-    font-size: 0.85em;
-    color: #666;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #6c757d; /* Cinza médio */
 }
 
+/* Mensagens de Erro */
 .error-message {
     color: #dc3545;
     margin-top: 15px;
-    font-size: 0.9em;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+/* --- Estilos da Seção de Login --- */
+.input-group {
+    margin-bottom: 20px; /* Mais espaçamento entre os campos */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px; /* Mais espaço entre label e input */
+    font-weight: 600;
+    color: #495057;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"] {
+    width: calc(100% - 24px); /* Ajuste para padding */
+    padding: 12px; /* Mais padding */
+    border: 1px solid #ced4da; /* Borda mais suave */
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+}
+
+/* Classe para ocultar elementos */
+.hidden {
+    display: none;
+    opacity: 0; /* Para a transição de opacidade */
+}
+
+/* Cores de Status do Motor */
+#statusMotor[style*="color: rgb(40, 167, 69)"] { /* Cor verde para LIGADO */
+    font-weight: bold;
+}
+#statusMotor[style*="color: rgb(220, 53, 69)"] { /* Cor vermelha para DESLIGADO */
     font-weight: bold;
 }
